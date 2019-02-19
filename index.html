@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Device Check</title>
+</head>
+<body>
+
+<script>
+
+var userAgent = {
+	os : {
+		WINDOW : (navigator.platform == "Win32" || navigator.platform == "Win64") && navigator.userAgent.indexOf("Windows Phone") < 0,	//윈도우 인지 아닌지?
+		ANDROID : navigator.userAgent.indexOf("Android") > 0,	//안드로이드 계열인지 아닌지?
+		IPHONE : navigator.userAgent.indexOf("iPhone") > 0	|| navigator.userAgent.indexOf("iPad") > 0 || navigator.userAgent.indexOf("iPod") > 0 //아이폰 계열인지 아닌지?
+	}
+};
+
+if(!userAgent.os.WINDOW) //PC접속시
+	location.href = "http://m.naver.com";
+</script>  
+
+  <h1>PC Homepage</h1>
+
+</body>
+</html>
